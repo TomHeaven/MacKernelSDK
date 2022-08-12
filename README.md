@@ -3,6 +3,8 @@ MacKernelSDK
 
 This project lets your kernel extensions (kexts) target a broad range of XNU kernels when using the latest Xcode version right from the interface. In addition, it also includes several headers only available in other projects or older Xcode releases.
 
+Both Intel CPUs (arch: x86_64) & Apple Silicon (arch: arm64e) are suppported.
+
 ## Quick start
 
 To start using **MacKernelSDK** do the following steps:
@@ -26,11 +28,16 @@ To start using **MacKernelSDK** do the following steps:
 
     ![xcode-link](Docs/xcode-link.png)
 
-4. Ensure that **Library Search Paths** contains the `libkmod.a` location, e.g.:
+4. Ensure that **Library Search Paths** contains the `libkmod.a` location, e.g. for Intel CPU:
 
     ```
     $(PROJECT_DIR)/MacKernelSDK/Library/x86_64
     ```
+    for both Intel CPU and Apple Silicon:
+    ```
+    $(PROJECT_DIR)/MacKernelSDK/Library/x86_64_arm64e
+    ```
+    
 
     Otherwise Xcode will link to the original libkmod.
 
@@ -38,36 +45,6 @@ To start using **MacKernelSDK** do the following steps:
 
 6. To make sure that you use the right SDK check for `__ACIDANTHERA_MAC_SDK` macro in `Availability.h`.
 
-## Targeting `i386`
-
-To compile for 32-bit you will need to add a set of flags in your project:
-
-1. Other C Flags (`OTHER_CFLAGS`):
-
-    - `-static`
-    - `-nostdlib`
-    - `-Wno-stdlibcxx-not-found`
-    - `-target i386-apple-macos10.6`
-    - `-fallow-unsupported`
-    - `-fno-stack-protector` if targeting 10.5 and older
-    - `-fno-jump-tables` if targeting 10.5 and older
-
-2. Other Linker Flags (`OTHER_LDFLAGS`):
-
-    - `-static`
-    - `-target i386-apple-macos10.6`
-
-3. C++ Standard Library (`CLANG_CXX_LIBRARY`) to **Compiler Default** or empty.
-
-4. Library Search Paths set to contain a kmod with an i386 slice, e.g. $(PROJECT_DIR)/MacKernelSDK/Library/universal.
-
-5. The symbol table may be misaligned due to i386 kexts being of type `MH_OBJECT`.  
-`fix-macho32` is provided in the `scripts` directory of [ocbuild](https://github.com/acidanthera/ocbuild) to correct alignments. Python 3 and `macholib` are required.
-
-    Usage:
-    ```
-    ./fix-macho32 [bin_path]
-    ```
 
 ## Extensions and modifications
 

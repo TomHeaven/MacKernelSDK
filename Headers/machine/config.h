@@ -28,7 +28,7 @@
 #ifndef _MACHINE_CONFIG_H
 #define _MACHINE_CONFIG_H
 
-#if defined (__i386__) || defined (__x86_64__)
+#if defined (__i386__) || defined (__x86_64__) || defined(__arm64__)
 #else
 #error architecture not supported
 #endif

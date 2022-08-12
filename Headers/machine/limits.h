@@ -2,7 +2,7 @@
  *  compiler.  GCC provides its own limits.h which can be found in
  *  /usr/lib/gcc, although it is not very informative.
  *  This file is public domain.  */
-#if defined (__i386__) || defined(__x86_64__)
+#if defined (__i386__) || defined(__x86_64__) || defined(__arm64__)
 #include <i386/limits.h>
 #else
 #error architecture not supported

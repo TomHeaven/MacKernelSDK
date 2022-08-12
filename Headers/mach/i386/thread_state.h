@@ -35,7 +35,7 @@
 /* Size of maximum exported thread state in words */
 #define I386_THREAD_STATE_MAX   (614)    /* Size of biggest state possible */
 
-#if defined (__i386__) || defined(__x86_64__)
+#if defined (__i386__) || defined(__x86_64__) || defined(__arm64__)
 #define THREAD_STATE_MAX        I386_THREAD_STATE_MAX
 #endif
 

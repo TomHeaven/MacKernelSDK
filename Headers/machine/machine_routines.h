@@ -28,7 +28,7 @@
 #ifndef _MACHINE_MACHINE_ROUTINES_H
 #define _MACHINE_MACHINE_ROUTINES_H
 
-#if defined (__i386__) || defined(__x86_64__)
+#if defined (__i386__) || defined(__x86_64__) || defined(__arm64__)
 #include "i386/machine_routines.h"
 #else
 #error architecture not supported

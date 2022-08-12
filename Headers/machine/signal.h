@@ -28,7 +28,7 @@
 #ifndef _BSD_MACHINE_SIGNAL_H_
 #define _BSD_MACHINE_SIGNAL_H_
 
-#if defined (__i386__) || defined(__x86_64__)
+#if defined (__i386__) || defined(__x86_64__) || defined(__arm64__)
 #include "i386/signal.h"
 #else
 #error architecture not supported

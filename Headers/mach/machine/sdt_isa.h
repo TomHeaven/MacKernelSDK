@@ -28,7 +28,7 @@
 #ifndef _MACH_MACHINE_SDT_ISA_H_
 #define _MACH_MACHINE_SDT_ISA_H_
 
-#if defined (__i386__) || defined(__x86_64__)
+#if defined (__i386__) || defined(__x86_64__) || defined(__arm64__)
 #include <mach/i386/sdt_isa.h>
 #else
 #error architecture not supported

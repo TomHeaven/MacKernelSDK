@@ -29,7 +29,7 @@
 #ifndef _MACH_MACHINE_ASM_H
 #define _MACH_MACHINE_ASM_H
 
-#if defined (__i386__) || defined(__x86_64__)
+#if defined (__i386__) || defined(__x86_64__) || defined(__arm64__)
 #include "mach/i386/asm.h"
 #else
 #error architecture not supported

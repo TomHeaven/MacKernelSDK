@@ -61,7 +61,7 @@
  *
  *	This file contains the structure definitions for the user-visible
  *	thread state.  This thread state is examined with the thread_get_state
- *	kernel call and may be changed with the thread_set_state kernel call.
+ *	kernel call and may be changed with the thread_set_state kernel call./Volumes/Data/library/HoRNDIS/MacKernelSDK/Headers/mach/machine/thread_state.h
  *
  */
 

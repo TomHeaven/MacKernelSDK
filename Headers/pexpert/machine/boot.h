@@ -28,7 +28,7 @@
 #ifndef _PEXPERT_MACHINE_BOOT_H
 #define _PEXPERT_MACHINE_BOOT_H
 
-#if defined (__i386__) || defined(__x86_64__)
+#if defined (__i386__) || defined(__x86_64__) || defined(__arm64__)
 #include "pexpert/i386/boot.h"
 #else
 #error architecture not supported

@@ -443,7 +443,7 @@ public:
 
 	typedef void (*_ptf_t)(void);
 
-#if   defined(__i386__) || defined(__x86_64__)
+#if   defined(__i386__) || defined(__x86_64__) || defined(__arm64__)
 
 // Slightly less arcane and slightly less evil code to do
 // the same for kexts compiled with the standard Itanium C++
